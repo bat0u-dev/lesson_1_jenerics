@@ -20,7 +20,7 @@ public class Box<T extends Fruit> {
         return this.getBoxWeight() == box.getBoxWeight();
     }
 
-    public void shift(Box<T> box){
+    public void shift(Box<? super T> box){ //так и не понял, почему тут не может быть просто Box<T>?
         box.list.clear();
         box.list.trimToSize();
         box.list.addAll(this.list);
